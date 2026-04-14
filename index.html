@@ -1,42 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>News — Install</title>
-<style>
-  body { font-family: -apple-system, system-ui, sans-serif; max-width: 480px; margin: 3rem auto; padding: 0 1rem; text-align: center; color: #222; }
-  h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-  .sub { color: #666; margin-bottom: 2rem; }
-  a.btn {
-    display: inline-block;
-    background: #007aff;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  .version { margin-top: 1.5rem; font-size: 0.85rem; color: #888; }
-  .changelog { margin-top: 2rem; text-align: left; background: #f6f6f8; border-radius: 12px; padding: 1rem 1.25rem; }
-  .changelog h2 { font-size: 1rem; margin: 0 0 0.5rem; color: #333; }
-  .changelog ul { margin: 0; padding-left: 1.2rem; color: #444; font-size: 0.92rem; line-height: 1.55; }
-  .note { margin-top: 2rem; font-size: 0.9rem; color: #666; line-height: 1.5; }
-  code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install News</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: #fff;
+      color: #1c1c1e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .icon-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .app-icon {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .app-title {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #6e6e73;
+    }
+
+    .install-btn {
+      display: inline-block;
+      background: #007aff;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 16px 52px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 10px 0 18px;
+      transition: background 0.15s;
+    }
+
+    .install-btn:active,
+    .install-btn:hover {
+      background: #0062cc;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #6e6e73;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .meta .sep { color: #c7c7cc; }
+
+    .build-chip {
+      background: #f2f2f7;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      color: #3c3c43;
+    }
+
+    .whats-new {
+      background: #f2f2f7;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 28px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .whats-new h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .whats-new ul {
+      list-style: disc;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .whats-new li {
+      font-size: 15px;
+      line-height: 1.45;
+      color: #3c3c43;
+    }
+
+    .instructions {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #6e6e73;
+      text-align: center;
+      max-width: 420px;
+      line-height: 1.6;
+    }
+
+    .instructions strong {
+      color: #1c1c1e;
+    }
+  </style>
 </head>
 <body>
-  <h1>📰 News</h1>
-  <p class="sub">iOS news reader — signed development build</p>
-  <a class="btn" href="itms-services://?action=download-manifest&url=https://marco20240618.github.io/News-release/manifest.plist">Tap to install</a>
-  <p class="version">
-    Version <strong>1.0</strong> &nbsp;·&nbsp;
-    Build <code><a href="https://github.com/marco20240618/News/commit/33a1f52" style="color:inherit">33a1f52</a></code> &nbsp;·&nbsp;
-    2026-04-14
-  </p>
-  <div class="changelog">
-    <h2>What’s in 1.0</h2>
+
+  <div class="header">
+    <div class="icon-row">
+      <span class="app-icon">📰</span>
+      <span class="app-title">News</span>
+    </div>
+    <p class="subtitle">iOS news reader — signed development build</p>
+  </div>
+
+  <a class="install-btn"
+     href="itms-services://?action=download-manifest&url=https://marco20240618.github.io/News-release/manifest.plist">
+    Tap to install
+  </a>
+
+  <div class="meta">
+    <span>Version <strong>1.0</strong></span>
+    <span class="sep">·</span>
+    <span>2026-04-14</span>
+  </div>
+
+  <div class="whats-new">
+    <h2>What's in 1.0</h2>
     <ul>
       <li>10 news sources: AP, Reuters, CNN, Guardian, Axios, USA Today, ABC, CBS, NBC, 联合早报</li>
       <li>Source picker (top-right) and scrollable section tab bar under the title</li>
@@ -45,9 +159,14 @@
       <li>Article page: publish time, selectable text, adjustable font / size / line spacing</li>
       <li>Pull-to-refresh, on-disk + in-memory cache</li>
       <li>JavaScript-rendered sources (Axios, USA Today) loaded via headless WKWebView</li>
+      <li>Dark mode: System / Light / Dark toggle in the toolbar</li>
     </ul>
   </div>
-  <p class="note">Open this page in Safari on your iPhone. After installing, you may need to:<br>
-    <strong>Settings → General → VPN &amp; Device Management</strong> → trust the developer certificate.</p>
+
+  <p class="instructions">
+    Open this page in <strong>Safari</strong> on your iPhone. After installing, you may need to:<br>
+    <strong>Settings → General → VPN &amp; Device Management</strong> → trust the developer certificate.
+  </p>
+
 </body>
 </html>
